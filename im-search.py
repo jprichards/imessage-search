@@ -9,10 +9,6 @@ cfuser = SCDynamicStoreCopyConsoleUser(None, None, None)
 defaultchatdb = '/Users/' + str(cfuser[0]) + '/Library/Messages/chat.db'
 
 
-def get_contactnumber(query):
-    print query
-
-
 def main():
     ap = argparse.ArgumentParser(description='This tool searches iMessages')
     ap.add_argument('-d', help='Specify path to iMessage chat.db')
