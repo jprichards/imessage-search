@@ -55,10 +55,13 @@ def main():
         elif r[21] == 0:
             msgtype = 'received      '
 
-        m.execute('SELECT id FROM handle WHERE ROWID = %s' % handleid)
-        contactnum = m.fetchone()
-        print (contactnum[0] + '  ' + msgtype + '  ' + message_time +
-               '  ' + message)
+        if handleid == 0:
+            pass
+        else:
+            m.execute('SELECT id FROM handle WHERE ROWID = %s' % handleid)
+            contactnum = m.fetchone()
+            print (contactnum[0] + '  ' + msgtype + '  ' + message_time +
+                   '  ' + message)
 
 
 if __name__ == '__main__':
